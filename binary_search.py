@@ -4,11 +4,7 @@ def bin_search(a,l,r,x):
         mid = l + (r-l)//2
 
         if(a[mid] == x):
-<<<<<<< HEAD
             return(mid)
-=======
-            return(mid+1)
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
         elif(a[mid] > x):
             return(bin_search(a,l,mid-1,x))
         else:

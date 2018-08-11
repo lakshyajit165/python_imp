@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Practice2.iml" filepath="$PROJECT_DIR$/.idea/Practice2.iml" />
-=======
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/Practice.iml" filepath="$PROJECT_DIR$/.idea/Practice.iml" />
-=======
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/PycharmProjects.iml" filepath="$PROJECT_DIR$/.idea/PycharmProjects.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/python_prac.iml" filepath="$PROJECT_DIR$/.idea/python_prac.iml" />
->>>>>>> da640fa0050c6ca621a2f80c0cb8fb0a44ac2b3f
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
     </modules>
   </component>
 </project>

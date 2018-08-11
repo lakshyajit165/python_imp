@@ -16,19 +16,7 @@
 if {[info commands package] == ""} {
     error "version mismatch: library\nscripts expect Tcl version 7.5b1 or later but the loaded version is\nonly [info patchlevel]"
 }
-<<<<<<< HEAD
 package require -exact Tcl 8.6.6
-=======
-<<<<<<< HEAD
-package require -exact Tcl 8.6.6
-=======
-<<<<<<< HEAD
-package require -exact Tcl 8.6.6
-=======
-package require -exact Tcl 8.6.7
->>>>>>> da640fa0050c6ca621a2f80c0cb8fb0a44ac2b3f
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
 
 # Compute the auto path to use in this interpreter.
 # The values on the path come from several locations:
@@ -181,13 +169,6 @@ if {[interp issafe]} {
 
     namespace eval ::tcl::clock [list variable TclLibDir $::tcl_library]
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
     proc clock args {
 	namespace eval ::tcl::clock [list namespace ensemble create -command \
 		[uplevel 1 [list namespace origin [lindex [info level 0] 0]]] \
@@ -195,15 +176,6 @@ if {[interp issafe]} {
 		    add clicks format microseconds milliseconds scan seconds
 		}]
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-    proc ::tcl::initClock {} {
->>>>>>> da640fa0050c6ca621a2f80c0cb8fb0a44ac2b3f
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
 	# Auto-loading stubs for 'clock.tcl'
 
 	foreach cmd {add format scan} {
@@ -214,24 +186,8 @@ if {[interp issafe]} {
 	    }
 	}
 
-<<<<<<< HEAD
 	return [uplevel 1 [info level 0]]
     }
-=======
-<<<<<<< HEAD
-	return [uplevel 1 [info level 0]]
-    }
-=======
-<<<<<<< HEAD
-	return [uplevel 1 [info level 0]]
-    }
-=======
-	rename ::tcl::initClock {}
-    }
-    ::tcl::initClock
->>>>>>> da640fa0050c6ca621a2f80c0cb8fb0a44ac2b3f
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
 }
 
 # Conditionalize for presence of exec.
@@ -333,13 +289,6 @@ proc unknown args {
 		    }
 		    append cinfo ...
 		}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
 		append cinfo "\"\n    (\"uplevel\" body line 1)"
 		append cinfo "\n    invoked from within"
 		append cinfo "\n\"uplevel 1 \$args\""
@@ -348,17 +297,6 @@ proc unknown args {
 		# and trim the extra contribution from the matching case
 		#
 		set expect "$msg\n    while executing\n\"$cinfo"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-		set tail "\n    (\"uplevel\" body line 1)\n    invoked\
-			from within\n\"uplevel 1 \$args\""
-		set expect "$msg\n    while executing\n\"$cinfo\"$tail"
->>>>>>> da640fa0050c6ca621a2f80c0cb8fb0a44ac2b3f
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
 		if {$errInfo eq $expect} {
 		    #
 		    # The stack has only the eval from the expanded command
@@ -372,13 +310,6 @@ proc unknown args {
 		# Stack trace is nested, trim off just the contribution
 		# from the extra "eval" of $args due to the "catch" above.
 		#
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
 		set expect "\n    invoked from within\n\"$cinfo"
 		set exlen [string length $expect]
 		set eilen [string length $errInfo]
@@ -394,40 +325,6 @@ proc unknown args {
 		}
 		return -code error -errorcode $errCode \
 			-errorinfo $einfo $msg
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-		set last [string last $tail $errInfo]
-		if {$last + [string length $tail] != [string length $errInfo]} {
-		    # Very likely cannot happen
-		    return -options $opts $msg
-		}
-		set errInfo [string range $errInfo 0 $last-1]
-		set tail "\"$cinfo\""
-		set last [string last $tail $errInfo]
-		if {$last + [string length $tail] != [string length $errInfo]} {
-		    return -code error -errorcode $errCode \
-			    -errorinfo $errInfo $msg
-		}
-		set errInfo [string range $errInfo 0 $last-1]
-		set tail "\n    invoked from within\n"
-		set last [string last $tail $errInfo]
-		if {$last + [string length $tail] == [string length $errInfo]} {
-		    return -code error -errorcode $errCode \
-			    -errorinfo [string range $errInfo 0 $last-1] $msg
-		}
-		set tail "\n    while executing\n"
-		set last [string last $tail $errInfo]
-		if {$last + [string length $tail] == [string length $errInfo]} {
-		    return -code error -errorcode $errCode \
-			    -errorinfo [string range $errInfo 0 $last-1] $msg
-		}
-		return -options $opts $msg
->>>>>>> da640fa0050c6ca621a2f80c0cb8fb0a44ac2b3f
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
 	    } else {
 		dict incr opts -level
 		return -options $opts $msg

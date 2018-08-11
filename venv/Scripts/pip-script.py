@@ -1,16 +1,4 @@
-<<<<<<< HEAD
 #!D:\PycharmProjects\Practice2\venv\Scripts\python.exe
-=======
-<<<<<<< HEAD
-#!D:\PycharmProjects\Practice\venv\Scripts\python.exe
-=======
-<<<<<<< HEAD
-#!"C:\Users\LAKSHYAJIT LAXMIKANT\PycharmProjects\venv\Scripts\python.exe"
-=======
-#!"G:\Pycharm Projects\python_prac\venv\Scripts\python.exe"
->>>>>>> da640fa0050c6ca621a2f80c0cb8fb0a44ac2b3f
->>>>>>> bf9ec1b50b9a105f9d7e270e398763a0ccb4d098
->>>>>>> 3fd2e0bf3056c187a4af3d5a6e8bb83949d7212a
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==9.0.1','console_scripts','pip'
 __requires__ = 'pip==9.0.1'
 import re
