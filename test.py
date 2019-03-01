@@ -1,4 +1,8 @@
-arr = [1,2,3,4,5,6,7,8,9]
-for i in arr:
-    x = list(filter(lambda a: a != i, arr))
-    print(x)
+statement = input().split()
+statement.sort()
+A = set(statement)
+for i in A:
+        if(statement.count(i) > 1):
+            print(i, statement.count(i))
+        else:
+            print(i)
